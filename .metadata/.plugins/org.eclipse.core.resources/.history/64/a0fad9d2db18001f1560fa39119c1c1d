@@ -1,0 +1,12 @@
+package kosa.mission;
+
+import java.util.Scanner;
+
+public class Mission02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

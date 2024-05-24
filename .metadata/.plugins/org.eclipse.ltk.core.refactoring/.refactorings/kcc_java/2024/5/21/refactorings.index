@@ -1,0 +1,12 @@
+1716446052346	Extract local variable 'd'
+1716448086424	Rename type 'Mission'
+1716448729515	Extract local variable 'scanner'
+1716448874005	Extract local variable 'nextLine'
+1716449255451	Extract local variable 'nextLine'
+1716451550070	Extract local variable 'sc'
+1716451639445	Extract local variable 'nextLine'
+1716510498189	Copy compilation unit
+1716510524296	Rename type 'VariableExam3'
+1716513269955	Copy compilation unit
+1716513325235	Extract local variable 'scanner'
+1716513344962	Extract local variable 'n'
