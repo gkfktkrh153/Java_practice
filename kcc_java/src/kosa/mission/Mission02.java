@@ -24,7 +24,34 @@ public class Mission02 {
 		System.out.println("총점 : " + total);
 		System.out.println("평균 : " + average);
 		
-
+		// 학점 출력(if-else)
+		
+		/*
+		 * if(average >= 90) System.out.println("A 학점"); else if(average >= 80)
+		 * System.out.println("B 학점"); else if(average >= 70)
+		 * System.out.println("C 학점"); else if(average >= 60)
+		 * System.out.println("D 학점"); else System.out.println("F 학점");
+		 */
+		
+		// 학점 출력(Switch)
+		switch((int)average / 10) {
+			case 9:
+				System.out.println("A 학점");
+				break;
+			case 8:
+				System.out.println("B 학점");
+				break;
+			case 7:
+				System.out.println("C 학점");
+				break;
+			case 6:
+				System.out.println("D 학점");
+				break;
+			default:
+				System.out.println("F 학점");
+			
+		}
+		
 	}
 
 }
