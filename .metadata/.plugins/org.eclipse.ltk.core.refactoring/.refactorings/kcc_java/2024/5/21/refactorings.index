@@ -13,3 +13,11 @@
 1716514710096	Extract local variable 'i'
 1716516433788	Copy compilation unit
 1716517610597	Copy compilation unit
+1716526937725	Copy compilation unit
+1716528265491	Extract local variable 'scanner'
+1716528465996	Extract local variable 'b'
+1716528803666	Extract local variable 'hashSet'
+1716529469212	Rename type 'VariableExam04'
+1716529478394	Copy compilation unit
+1716535038343	Extract local variable 'scanner'
+1716536643291	Copy compilation unit
