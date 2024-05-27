@@ -21,3 +21,25 @@
 1716529478394	Copy compilation unit
 1716535038343	Extract local variable 'scanner'
 1716536643291	Copy compilation unit
+1716538716121	Extract local variable 'sc'
+1716538966241	Copy compilation unit
+1716539316241	Copy compilation unit
+1716539649851	Copy compilation unit
+1716539797514	Copy compilation unit
+1716539985784	Copy compilation unit
+1716540064104	Copy compilation unit
+1716540105129	Rename type 'Task1'
+1716540116560	Rename type 'Task2'
+1716540132536	Rename type 'Task3'
+1716540141344	Rename type 'Task4'
+1716540149974	Rename type 'Task5'
+1716540165399	Rename type 'Task6'
+1716540173816	Rename type 'Task7'
+1716540182944	Copy compilation unit
+1716540244826	Copy compilation unit
+1716540441382	Copy compilation unit
+1716541588009	Copy compilation unit
+1716541653906	Copy compilation unit
+1716541710523	Copy compilation unit
+1716541960110	Copy compilation unit
+1716542203134	Delete element
