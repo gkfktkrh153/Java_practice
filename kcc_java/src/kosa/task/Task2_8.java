@@ -2,7 +2,7 @@ package kosa.task;
 
 import java.util.Scanner;
 
-public class Task2_5 {
+public class Task2_8 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -23,24 +23,35 @@ public class Task2_5 {
 			for (int j = number - i; j > 0; j--) {
 				System.out.print(" ");
 			}
-
-			System.out.println();
-		}
-		for (int i = number - 1; i >= 1; i--) {
-
-			for (int j = 0; j <= number - i - 1; j++) {
+			for (int j = number - i; j > 0; j--) {
 				System.out.print(" ");
 			}
-
-			for (int h = i + i - 2; h >= 0; h--) {
+			for (int j = 0; j < number - 1; j++) {
 				System.out.print("*");
 			}
-			for (int j = 0; j <= number - i - 1; j++) {
+
+			for (int h = 0; h < i + i - 1; h++) {
+				System.out.print("*");
+			}
+			for (int j = 0; j < number - 1; j++) {
+				System.out.print("*");
+			}
+			for (int j = number - i; j > 0; j--) {
 				System.out.print(" ");
 			}
-
+			for (int j = number - i; j > 0; j--) {
+				System.out.print(" ");
+				
+			}
+			for (int h = 0; h < i + i - 1; h++) {
+				System.out.print("*");
+			}
+			for (int j = number - i; j > 0; j--) {
+				System.out.print(" ");
+			}
 			System.out.println();
 		}
+
 	}
 
 }
