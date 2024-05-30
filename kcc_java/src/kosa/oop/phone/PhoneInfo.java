@@ -1,4 +1,4 @@
-package kosa.oop;
+package kosa.oop.phone;
 
 public class PhoneInfo {
 	private String name;
@@ -15,6 +15,18 @@ public class PhoneInfo {
 		this.birth = birth;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+	public String getBirth() {
+		return birth;
+	}
 	public void printPhoneInfo() {
 		System.out.println(">이름 : " + this.name);
 		System.out.println(">전화번호 : " + this.phoneNumber);
