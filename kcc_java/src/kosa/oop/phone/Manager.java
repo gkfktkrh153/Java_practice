@@ -32,5 +32,17 @@ public class Manager {
 
         phoneInfoArr[phoneInfoNum++] = new PhoneInfo(name, phoneNumber, birth);
 	}
+	public void searchPhoneInfo() {
+		System.out.println("이름: ");
+		String name = sc.nextLine();
+		int idx = -1;
+		
+		for(int i = 0; i < phoneInfoNum; i++) {
+			if(name.contentEquals(phoneInfoArr[i].getName()))
+				phoneInfoArr[i].printPhoneInfo();
+		}
+		if(idx == -1)
+			System.out.println("존재하지 않습니다.");
+	}
 
 }

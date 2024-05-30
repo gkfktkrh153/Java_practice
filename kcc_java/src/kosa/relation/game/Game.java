@@ -8,10 +8,11 @@ public class Game {
 
 	public Game() {
 		answer = new Answer();
+		count = 0;
 		System.out.println(Arrays.toString(answer.getAnswerArr()));
 		System.out.println("게임 시작!");
 	}
-	
+
 	public Boolean checkAnswer(int[] input) {
 		int strike = 0;
 		int ball = 0;
