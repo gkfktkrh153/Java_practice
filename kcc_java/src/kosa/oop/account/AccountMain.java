@@ -4,7 +4,7 @@ public class AccountMain {
 
 	public static void main(String[] args) {
 
-		Account account = new Account("1", "¤±¤±¤±", 1000); // ¸Þ¸ð¸®¸¦ ÇÒ´ç¹Þ°í ÂüÁ¶°ª ÀúÀå
+/*		Account account = new Account("1", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 1000); // ï¿½Þ¸ð¸®¸ï¿½ ï¿½Ò´ï¿½Þ°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 		account.deposit(500);
 		try {
@@ -12,10 +12,10 @@ public class AccountMain {
 		} catch (Exception e) {
 		}
 
-		System.out.println("°èÁÂ¹øÈ£ : " + account.accountNo);
-		System.out.println("°èÁÂÁÖ : " + account.ownerName);
-		System.out.println("ÀÜ¾×" + account.balance);
+		System.out.println("ï¿½ï¿½ï¿½Â¹ï¿½È£ : " + account.accountNo);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + account.ownerName);
+		System.out.println("ï¿½Ü¾ï¿½" + account.balance);
 
+	}*/
 	}
-
 }

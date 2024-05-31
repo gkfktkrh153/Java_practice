@@ -7,37 +7,46 @@ import java.util.Scanner;
 public class PhoneInfoMain {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		Manager manager = new Manager();
 
-		boolean flag = true;
-		while (flag) {
-			System.out.println("1.Ãß°¡ 2.ÀüÃ¼ Ãâ·Â 3.°Ë»ö 4.Á¾·á: ");
-			System.out.print("¸Þ´º: ");
-			int input = Integer.parseInt(sc.nextLine());
-			switch (input) {
-			case 1:
-				try {
-					manager.addPhoneInfo();
-				} catch (Exception ex) {
-					/* System.out.println(ex.getMessage()); */
-					ex.printStackTrace();
-				} finally {
-					System.out.println("¿¹¿Ü Á¾·á");
-				}
+		while (true) {
+			System.out.println("1.ì¶”ê°€ 2." + "ì „ì²´ì¶œë ¥ 3.ê²€ìƒ‰ 4.ìˆ˜ì • 5.ì‚­ì œ 6.ì¢…ë£Œ");
+			System.out.print("ë©”ë‰´ ìž…ë ¥: ")
+			;
+			String menu = DataInput.sc.nextLine();
+
+			switch (menu) {
+			case "1":
+				manager.addPhoneInfo();
 				break;
-			case 2:
+			case "2":
 				manager.listPhoneInfo();
 				break;
-			case 3:
-				System.out.print("°Ë»ö: ");
+			case "3":
+				try {
+					manager.searchPhoneInfo();
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
 				break;
-			case 4:
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+			case "4":
+				try {
+					manager.updatePhoneInfo();
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+				break;
+			case "5":
+				try {
+					manager.deletePhoneInfo();
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+				break;
+			case "6":
+				System.out.println("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ");
 				return;
 			}
 		}
-
 	}
-
 }

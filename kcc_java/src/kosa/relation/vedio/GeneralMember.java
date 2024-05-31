@@ -4,7 +4,7 @@ public class GeneralMember {
 	private String id;
 	private String name;
 	private String address;
-	private Vedio vedio;
+	private Video video;
 	
 	public GeneralMember() {
 		
@@ -18,17 +18,17 @@ public class GeneralMember {
 
 	}
 
-	public void rental(Vedio vedio) {
-		this.vedio = vedio;
+	public void rental(Video video) {
+		this.video = video;
 	}
 
 	public void printMemberInfo(){
-		System.out.println("¾ÆÀÌµğ :" + id);
-		System.out.println("ÀÌ¸§ :" + name);
-		System.out.println("ÁÖ¼Ò :" + address);
-		System.out.println("ºñµğ¿À ¹øÈ£ :" + vedio.getVedioNum());
-		System.out.println("ºñµğ¿À Á¦¸ñ :" + vedio.getTitle());
-		System.out.println("ºñµğ¿À ¹è¿ì :" + vedio.getActor());
+		System.out.println("íšŒì›ì˜ ì•„ì´ë”” :" + id);
+		System.out.println("íšŒì›ì˜ ì´ë¦„ :" + name);
+		System.out.println("íšŒì›ì˜ ì£¼ì†Œ :" + address);
+		System.out.println("íšŒì›ì´ ëŒ€ì—¬í•œ ë¹„ë””ì˜¤ ë²ˆí˜¸ :" + video.getVideoNo());
+		System.out.println("íšŒì›ì´ ëŒ€ì—¬í•œ ë¹„ë””ì˜¤ ì œëª© :" + video.getTitle());
+		System.out.println("íšŒì›ì´ ëŒ€ì—¬í•œ ë¹„ë””ì˜¤ ì£¼ì¸ê³µ:" + video.getActor());
 		
 	}
 }

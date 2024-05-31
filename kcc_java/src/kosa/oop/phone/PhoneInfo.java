@@ -28,9 +28,12 @@ public class PhoneInfo {
 		return birth;
 	}
 	public void printPhoneInfo() {
-		System.out.println(">ÀÌ¸§ : " + this.name);
-		System.out.println(">ÀüÈ­¹øÈ£ : " + this.phoneNumber);
-		System.out.println(">»ı³â¿ùÀÏ : " + this.birth);
+		System.out.println(">ì´ë¦„ : " + this.name);
+		System.out.println(">ì „í™”ë²ˆí˜¸ : " + this.phoneNumber);
+		System.out.println(">ìƒë…„ì›”ì¼ : " + this.birth);
 	}
 
+	public void updatePhoneNumber(String updatePhoneNumber) {
+		this.phoneNumber = updatePhoneNumber;
+	}
 }

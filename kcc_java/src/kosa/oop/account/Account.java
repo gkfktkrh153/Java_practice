@@ -2,9 +2,11 @@ package kosa.oop.account;
 
 
 public class Account {
-	String accountNo;
-	String ownerName;
-	int balance; // ÀÜ¾×
+	private String accountNo;
+	private String ownerName;
+	private int balance; 
+	
+	public Account(){}
 	
 	Account(String accountNo, String ownerName, int balance){
 		this.accountNo = accountNo;
@@ -18,9 +20,32 @@ public class Account {
 	int withdraw(int amount) throws Exception
 	{
 		if(balance < amount)
-			throw new Exception("ÀÜ¾Ø ºÎÁ·");
+			throw new Exception("í•œë„ ì´ˆê³¼");
 		
 		balance -= amount;
 		return amount;
+	}
+	public String getAccountNo() {
+		return accountNo;
+	}
+	
+	public void setAccountNo(String accountNo) {
+		this.accountNo = accountNo;
+	}
+	
+	public String getOwnerName() {
+		return ownerName;
+	}
+	
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
+	}
+	
+	public int getBalance() {
+		return balance;
+	}
+	
+	public void setBalance(int balance) {
+		this.balance = balance;
 	}
 }
