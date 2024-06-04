@@ -8,4 +8,14 @@
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="kosa.relation.vedio.GeneralMember"/>
+    <fullyQualifiedTypeName name="kosa.oop.account.Account"/>
+    <fullyQualifiedTypeName name="kosa.oop.phone.PhoneInfo"/>
+    <fullyQualifiedTypeName name="kosa.oop.phone.UniversePhoneInfo"/>
+    <fullyQualifiedTypeName name="kosa.relation.restaurant.MainCourse"/>
+    <fullyQualifiedTypeName name="kosa.relation.restaurant.Dessert"/>
+    <fullyQualifiedTypeName name="kosa.oop2.Service"/>
+    <fullyQualifiedTypeName name="kosa.oop3.Role"/>
+    <fullyQualifiedTypeName name="kosa.oop4.Speakable"/>
+    <fullyQualifiedTypeName name="java.lang.Runnable"/>
 </qualifiedTypeNameHistroy>
