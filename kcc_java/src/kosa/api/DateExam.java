@@ -36,12 +36,14 @@ public class DateExam {
 			int currentMonth = now.getMonth();
 			int joinMonth = date.getMonth();
 			
-			year = date.getYear() - now.getYear();
-			if(joinMonth < currentMonth)
+			if(joinMonth < currentMonth) {
 				month = currentMonth - joinMonth;
+				year = now.getYear() - date.getYear();
+			}
 			else {
 				month = 12 - joinMonth + currentMonth;
-			}
+				year = now.getYear() - date.getYear() - 1;
+			} // 23 8 24 2
 			
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

@@ -1,14 +1,14 @@
 package kosa.oop.phone;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 //전화번호 관리 전반적인 기능
 public class Manager {
-	private PhoneInfo[] arr;
-	private int count;
+	private List<PhoneInfo> arr;
 
 	public Manager() {
-		arr = new PhoneInfo[100];
+		arr = new ArrayList<PhoneInfo>();
 	}
 
 	public void addPhoneInfo() {
@@ -27,21 +27,21 @@ public class Manager {
 
 			switch (addMenu) {
 			case 1:
-				arr[count++] = new PhoneInfo(name, phoneNo, birth);
+				arr.add(new PhoneInfo(name, phoneNo, birth));
 				break;
 			case 2:
 				System.out.print("부서: ");
 				String dept = DataInput.sc.nextLine();
 				System.out.print("직급: ");
 				String position = DataInput.sc.nextLine();
-				arr[count++] = new UniversePhoneInfo(name, phoneNo, birth, dept, position);
+				arr.add(new UniversePhoneInfo(name, phoneNo, birth, dept, position));
 				break;
 			case 3:
 				System.out.print("전공: ");
 				String major = DataInput.sc.nextLine();
 				System.out.print("학번: ");
 				String year = DataInput.sc.nextLine();
-				arr[count++] = new CompanyPhoneInfo(name, phoneNo, birth, major, year);
+				arr.add(new CompanyPhoneInfo(name, phoneNo, birth, major, year));
 				break;
 			}
 
@@ -56,15 +56,15 @@ public class Manager {
 		System.out.print("1.일반 2.회사 3.동창 ");
 		int listMenu = Integer.parseInt(DataInput.sc.nextLine());
 		
-		for (int i = 0; i < count; i++) {
-			if(listMenu == 2 && arr[i] instanceof CompanyPhoneInfo) {
-				arr[i].printPhoneInfo();
+		for (int i = 0; i < arr.size(); i++) {
+			if(listMenu == 2 && arr.get(i) instanceof CompanyPhoneInfo) {
+				arr.get(i).printPhoneInfo();
 			}
-			else if(listMenu == 3 && arr[i] instanceof UniversePhoneInfo) {
-				arr[i].printPhoneInfo();
+			else if(listMenu == 3 && arr.get(i) instanceof UniversePhoneInfo) {
+				arr.get(i).printPhoneInfo();
 			}
 			else if(listMenu == 1){
-				arr[i].printPhoneInfo();
+				arr.get(i).printPhoneInfo();
 				
 			}
 		}
@@ -75,9 +75,9 @@ public class Manager {
 		// 검색하고자하는 이름으로 1개의 PhoneInfo 객체의 내용을 출력한다.
 		System.out.print("검색 이름: ");
 		String inputName = DataInput.sc.nextLine();
-		for (int i = 0; i < count; i++) {
+		for (int i = 0; i < arr.size(); i++) {
 			if (inputName.equals(inputName)) {
-				arr[i].printPhoneInfo();
+				arr.get(i).printPhoneInfo();
 				return;
 			}
 		}
@@ -111,19 +111,14 @@ public class Manager {
 		System.out.print("삭제할 핸드폰 번호를 입력해주세요: ");
 		String phoneNumber = DataInput.sc.nextLine();
 
-		for (int i = 0; i < count; i++) {
-			if (arr[i].getPhoneNumber().equals(phoneNumber)) {
-				idx = i;
+		for (int i = 0; i < arr.size(); i++) {
+			if (arr.get(i).getPhoneNumber().equals(phoneNumber)) {
+				PhoneInfo remove = arr.remove(i);
+				System.out.println(remove);
 				break;
 			}
 		}
 
-		for (int i = idx; i < count - 1; i++) {
-			if (idx == count - 1)
-				arr[idx] = null;
-			arr[i] = arr[i + 1];
-
-		}
 
 		if (idx == -1)
 			System.out.println("존재하지 않는 전화번호입니다.");
