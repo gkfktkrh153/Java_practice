@@ -44,6 +44,9 @@ public class PhoneInfoMain {
 				}
 				break;
 			case "6":
+				manager.sortPhoneInfo();
+				break;
+			case "7":
 				System.out.println("프로그램 종료");
 				return;
 			}
