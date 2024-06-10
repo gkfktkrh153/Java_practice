@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 //전화번호 관리 전반적인 기능
 public class Manager {
@@ -75,14 +77,19 @@ public class Manager {
 		// 검색하고자하는 이름으로 1개의 PhoneInfo 객체의 내용을 출력한다.
 		System.out.print("검색 이름: ");
 		String inputName = DataInput.sc.nextLine();
-		for (int i = 0; i < arr.size(); i++) {
-			if (inputName.equals(inputName)) {
-				arr.get(i).printPhoneInfo();
-				return;
-			}
-		}
 
-		throw new Exception("검색 기록이 없습니다.");
+		PhoneInfo phoneInfo = arr.stream()
+				.filter(p -> p.getName().equals(inputName))
+				.findFirst().orElseThrow(() -> new Exception("검색 기록이 없습니다."));
+
+		
+		phoneInfo.printPhoneInfo();
+
+		/**
+		 * 반복문으로 구현 for (int i = 0; i < arr.size(); i++) { if
+		 * (inputName.equals(inputName)) { arr.get(i).printPhoneInfo(); return; } }
+		 **/
+		;
 	}
 
 	public void updatePhoneInfo() {
@@ -93,38 +100,55 @@ public class Manager {
 		System.out.print("변경할 전화번호를 입력해주세요: ");
 		String updateNumber = DataInput.sc.nextLine();
 
-		int idx = -1;
-		for (PhoneInfo phoneInfo : arr) {
-			if (phoneInfo.getPhoneNumber().equals(targetNumber)) {
-				phoneInfo.updatePhoneNumber(updateNumber);
-			}
-		}
-		if (idx == -1)
-			System.out.println("존재하지 않는 전화번호입니다.");
+		Optional<PhoneInfo> findFirst = arr.stream()
+				.filter(p -> p.getPhoneNumber().equals(targetNumber))
+				.findFirst();
 
+		
+		
+		if (!findFirst.isEmpty()) {
+			findFirst.get().updatePhoneNumber(updateNumber);
+			return;
+		}
+
+		System.out.println("존재하지 않는 전화번호입니다.");
+
+		/*
+		 * int idx = -1; for (PhoneInfo phoneInfo : arr) { if
+		 * (phoneInfo.getPhoneNumber().equals(targetNumber)) {
+		 * phoneInfo.updatePhoneNumber(updateNumber); } }
+		 */
 	}
 
 	public void deletePhoneInfo() {
 		// 이름 입력 -> 대상 객체 검색 -> 인덱스 찾기 -> 해당 객체 삭제
-		int idx = -1;
 
 		System.out.print("삭제할 핸드폰 번호를 입력해주세요: ");
 		String phoneNumber = DataInput.sc.nextLine();
 
-		for (int i = 0; i < arr.size(); i++) {
-			if (arr.get(i).getPhoneNumber().equals(phoneNumber)) {
-				arr.remove(i);
-				idx = i;
-				break;
-			}
-		}
+		Optional<PhoneInfo> findFirst = arr.stream()
+				.filter(p -> p.getPhoneNumber().equals(phoneNumber))
+				.findFirst();
 
-		if (idx == -1)
-			System.out.println("존재하지 않는 전화번호입니다.");
+		if (!findFirst.isEmpty()) {
+			arr.remove(findFirst.get());
+			return;
+		}
+		System.out.println("존재하지 않는 전화번호입니다.");
+
+		/*
+		 * 반복문으로 int idx = -1;
+		 * 
+		 * for (int i = 0; i < arr.size(); i++) { if
+		 * (arr.get(i).getPhoneNumber().equals(phoneNumber)) { arr.remove(i); idx = i;
+		 * break; } }
+		 * 
+		 * if (idx == -1) System.out.println("존재하지 않는 전화번호입니다.");
+		 */
 	}
 
 	public void sortPhoneInfo() {
-		System.out.print("1.이름 순(오름차순) 2.이름 순(내림차순) 3.번호 순(오름차순) 4.번호 순(내림차순) 5.번호순(오름차순) 6.번호순(내림차순)");
+		System.out.print("1.이름 순(오름차순) 2.이름 순(내림차순) 3.번호 순(오름차순) 4.번호 순(내림차순) 5.생년월일(오름차순) 6.생년월일(내림차순)");
 		int sortMenu = Integer.parseInt(DataInput.sc.nextLine());
 
 		switch (sortMenu) {
@@ -154,27 +178,29 @@ public class Manager {
 			@Override
 			public int compare(PhoneInfo o1, PhoneInfo o2) {
 				if (o1.getBirth().compareTo(o2.getBirth()) < 0) {
-					return -1;
-				} else if (o1.getBirth().compareTo(o2.getBirth()) > 0)
 					return 1;
+				} else if (o1.getBirth().compareTo(o2.getBirth()) > 0)
+					return -1;
 				return 0;
 			}
 
-		});	
+		});
 	}
+
 	private void sortByBirthDayDesc() {
 		Collections.sort(arr, new Comparator<>() {
 			@Override
 			public int compare(PhoneInfo o1, PhoneInfo o2) {
 				if (o1.getBirth().compareTo(o2.getBirth()) < 0) {
-					return 1;
-				} else if (o1.getBirth().compareTo(o2.getBirth()) > 0)
 					return -1;
+				} else if (o1.getBirth().compareTo(o2.getBirth()) > 0)
+					return 1;
 				return 0;
 			}
 
-		});	
+		});
 	}
+
 	private void sortByPhoneNumberAsc() {
 		Collections.sort(arr, new Comparator<>() {
 			@Override
@@ -186,8 +212,9 @@ public class Manager {
 				return 0;
 			}
 
-		});	
+		});
 	}
+
 	private void sortByPhoneNumberDesc() {
 		Collections.sort(arr, new Comparator<>() {
 			@Override
@@ -199,7 +226,7 @@ public class Manager {
 				return 0;
 			}
 
-		});	
+		});
 	}
 
 	private void sortByNameDesc() {
