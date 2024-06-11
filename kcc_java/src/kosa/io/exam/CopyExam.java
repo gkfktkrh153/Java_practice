@@ -1,4 +1,4 @@
-package kosa.io;
+package kosa.io.exam;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -15,9 +15,9 @@ public class CopyExam {
 		try {
 			reader = new FileReader("poem2.txt");
 			char arr[] = new char[100];
-			Arrays.fill(arr, ' ');
 
 			while (true) {
+				Arrays.fill(arr, ' ');
 				int data = reader.read(arr);
 				System.out.println(data);
 				if (data == -1)

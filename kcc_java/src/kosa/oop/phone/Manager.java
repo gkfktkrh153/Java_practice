@@ -1,11 +1,18 @@
 package kosa.oop.phone;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import kosa.io.exam.Member;
+import kosa.io.exam.Video;
 
 //전화번호 관리 전반적인 기능
 public class Manager {
@@ -255,5 +262,39 @@ public class Manager {
 			}
 
 		});
+	}
+
+	public void writePhoneInfo() {
+		ObjectOutputStream oos = null;
+		try {
+			oos = new ObjectOutputStream(new FileOutputStream("phoneInfo.ser"));
+
+			oos.writeObject(arr);
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}finally {
+			try {
+				oos.close();
+			}catch (Exception e) {}
+		}
+		
+	}
+
+	public void readPhoneInfo() {
+		ObjectInputStream ois = null;
+		try {
+			ois = new ObjectInputStream(new FileInputStream("phoneInfo.ser"));
+			arr  = (List<PhoneInfo>) ois.readObject();
+			for(PhoneInfo  p : arr) {
+				p.printPhoneInfo();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				ois.close();
+			}catch(Exception e2){}
+		}
+		
 	}
 }

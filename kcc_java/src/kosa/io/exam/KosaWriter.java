@@ -1,4 +1,4 @@
-package kosa.io;
+package kosa.io.exam;
 
 import java.io.FileWriter;
 import java.io.IOException;
