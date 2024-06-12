@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Cmd {
+public class Cmd extends Thread{
 
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class Cmd {
 
 			}
 			else if (command.split(" ")[0].equals("vi")) {
-	            FileWriter fw = new FileWriter(file.getPath());
+	            FileWriter fw = new FileWriter(file.getPath() + "\\" + command.split(" ")[0]);
 	            
 	            try {
 	               String input = sc.nextLine();

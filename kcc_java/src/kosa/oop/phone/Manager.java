@@ -15,7 +15,7 @@ import kosa.io.exam.Member;
 import kosa.io.exam.Video;
 
 //전화번호 관리 전반적인 기능
-public class Manager {
+public class Manager{
 	private List<PhoneInfo> arr;
 
 	public Manager() {
